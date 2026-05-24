@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recent Quotes | Revalgo</title>
+        
+        <link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+    
+    <body>
+        <header>
+            <a href="./dashboard.html" class="logo"><img src="./assets/images/login/revalgo_white_background.png" alt="Revalgo White"></a>
+            <div class="search-wrapper">
+                <input type="text" id="search-quote" class="search-quote-input" name="search-quote" placeholder="PO#, Order#, Customer# / Name" autocomplete="off">
+                <button class="search-quote-btn"><img src="./assets/images/dashboard/search_icon.png" alt="Search icon"></button>
+                <div class="global-dropdown">
+                    <ul class="list-wrapper">
+                        <div class="id-wrapper list-container">
+                            <h3 class="list-header">Quote Id</h3>
+                            <ul class="id-list">
+                                    <li>McKesson Corporation</li>
+                                    <li>McKesson Corporation Limited</li>
+                                    <li>McKesn</li>
+                                    <li>McKenson</li>
+                                    <li>McKenson</li>
+                            </ul>
+                        </div>
+                        <div class="name-wrapper list-container">
+                            <h3 class="list-header">Customer Name</h3>
+                            <ul class="name-list">
+                                    <li>McKesson Corporation</li>
+                                    <li>McKesson Corporation Limited</li>
+                                    <li>McKesn</li>
+                                    <li>McKenson</li>
+                                    <li>McKenson</li>
+                            </ul>
+                        </div>
+                        <div class="po-wrapper list-container">
+                            <h3 class="list-header">PO</h3>
+                            <ul class="po-list">
+                                    <li>McKesson Corporation</li>
+                                    <li>McKesson Corporation Limited</li>
+                                    <li>McKesn</li>
+                                    <li>McKenson</li>
+                                    <li>McKenson</li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./create-quote.html" class="new-quote-btn">New Quote</a></li>
+                    <li><a href="#"><img src="./assets/images/global/home.png" alt="home"></a></li>
+                    <li><a href="#"><img src="./assets/images/global/bell.png" alt="bell"></a></li>
+                    <li><a href="#"><img src="./assets/images/global/settings.png" alt="settings"></a></li>
+                    <li class="profile-container">
+                        <div class="profile-img-wrapper">
+                            <img src="./assets/images/global/user.png" class="user-profile" alt="profile"/>
+                        </div>
+                                
+                        <button type="button" class="profile-toggle">
+                        <img
+                            src="./assets/images/global/down_arrow.png"
+                            class="down-arrow"
+                            alt="down-arrow"
+                        />
+                        </button>
+                        <div class="profile-menu">
+                            <a href="./index.html" class="logout-btn"> <img src="./assets/images/global/logout.png" alt="logout">Logout</a>
+                        </div>
+                        
+                    </li>
+                </ul>
+
+            </nav>
+        </header>
+        <main class="quote-wrapper">
+            <div class="recent-quote-wrapper">
+                <div class="top-btn-wrapper">
+                    <div class="back-btn-wrapper">
+                        <div class="back-btn-container">
+                            <button type="button" class="back-create-btn">
+                                <a href="./dashboard.html"><img src="./assets/images/global/arrow_left_blue.png" class="back-arrow-img" alt="left arrow"> </a><span>Create Quote </span>
+                            </button>
+                            <div class="quote-status"><span class="status approved">Approved</span> </div>
+                            <button type="button" class="del-quote-btn active"><img src="./assets/images/global/delete_icon.png" alt="delete"></button>
+                            <button class="undo-quote-btn"><img src="./assets/images/dashboard/undo_icon.png" alt="undo">Undo</button>
+                        </div>
+                        <div class="quote-id-wrapper">
+                            <div class="old id-container">
+                                <p class="title">Old Quote ID</p>
+                                <p class="text">#7DB38BFED</p>
+                            </div>
+                            <div class="new id-container">
+                                <p class="title">New Quote ID</p>
+                                <p class="text">-</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="approve-btn-container active">
+                        <button type="button" class="add-note-btn" onclick="openQuoteNotPopup()">Add Note</button>
+                        <button type="button" class="approve-btn">Approve Quote</button>
+                    </div>
+                </div>
+                <div class="quick-order-wrapper">
+                    <div class="quick-info-wrapper">
+                        <div class="info">
+                            <p class="header">Bill To</p>
+                            <div class="details bill_to_text">
+                                <p class="name">Astral India Pvt ltd</p>
+                                <p class="address">606,knolwood,brick <br> NJ 096478</p>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="header">Ship To <button type="button" class="edit-btn"><img src="./assets/images/global/edit_icon.png" alt="Edit icon"></button></p>
+                            <div class="details ship_to_text">
+                                <p class="name">Astral India Pvt ltd</p>
+                                <p class="address">606,knolwood,brick <br> NJ 096478</p>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="header">PO No <button type="button" class="edit-btn"><img src="./assets/images/global/edit_icon.png" alt="Edit icon"></button></p>
+                            <div class="details">
+                                <p class="po_no_text text">AB32120/486</p>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="header">Job No <button type="button" class="edit-btn"><img src="./assets/images/global/edit_icon.png" alt="Edit icon"></button></p>
+                            <div class="details">
+                                <p class="job_no_text text">AB32120/486</p>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="header">Buyer <button type="button" class="edit-btn"><img src="./assets/images/global/edit_icon.png" alt="Edit icon"></button></p>
+                            <div class="details">
+                                <p class="buyer_text text">Ast India Pvt. Ltd</p>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="header">Deleivery Date <button type="button" class="edit-btn"><img src="./assets/images/global/edit_icon.png" alt="Edit icon"></button></p>
+                            <div class="details">
+                                <p class="deleivery_date_text text">05/05/34</p>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="header">#Lines</p>
+                            <div class="details">
+                                <p class="lines_text text">4</p>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="header">Total Price</p>
+                            <div class="details">
+                                <p class="total_price_text text">$6565.87</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="quick-content-wrapper">
+                        <div class="left-wrapper">
+                            <div class="header-wrapper">
+                                <div class="btn-container">
+                                    <button type="button" class="email-btn" data-target=".mail-wrapper">Email</button>
+                                    <button type="button" class="quick-order-btn" data-target=".table-wrapper">Quick Order</button>
+                                    <button type="button" class="upload-btn active" data-target=".upload-wrapper">Upload</button>
+                                </div>
+                                <button type="button" class="mail-expand-btn"><img src="./assets/images/global/email_expand_icon.png" alt="expand icon"></button>
+                                
+                            </div>
+                            <div class="body-wrapper">
+                                    <div class="table-wrapper">
+                                        <div class="table-header">
+                                            <p class="quantity-header">Qty</p>
+                                            <p class="description-header">Description</p>
+                                        </div>
+                                        <div class="table-body">
+                                            <div class="table-row">
+                                                <div class="qty-input-wrapper">
+                                                    <input type="text" name="qty" class="qty-input" autocomplete="off">
+                                                </div>
+
+                                                <div class="desc-wrapper">
+                                                    <input type="text" class="desc-input" name="description" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="qty-input-wrapper">
+                                                    <input type="text" name="qty" class="qty-input" autocomplete="off">
+                                                </div>
+
+                                                <div class="desc-wrapper">
+                                                    <input type="text" class="desc-input" name="description" autocomplete="off">
+                                                    <div class="desc-dropdown">
+                                                        <ul class="desc-list"></ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="qty-input-wrapper">
+                                                    <input type="text" name="qty" class="qty-input" autocomplete="off">
+                                                </div>
+
+                                                <div class="desc-wrapper">
+                                                    <input type="text" class="desc-input" name="description" autocomplete="off">
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="qty-input-wrapper">
+                                                    <input type="text" name="qty" class="qty-input" autocomplete="off">
+                                                </div>
+
+                                                <div class="desc-wrapper">
+                                                    <input type="text" class="desc-input" name="description" autocomplete="off">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="qty-input-wrapper">
+                                                    <input type="text" name="qty" class="qty-input" autocomplete="off">
+                                                </div>
+
+                                                <div class="desc-wrapper">
+                                                    <input type="text" class="desc-input" name="description" autocomplete="off">
+                                                
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="qty-input-wrapper">
+                                                    <input type="text" name="qty" class="qty-input" autocomplete="off">
+                                                </div>
+                                                
+
+                                                <div class="desc-wrapper">
+                                                    <input type="text" class="desc-input" name="description" autocomplete="off">
+                                                
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="qty-input-wrapper">
+                                                    <input type="text" name="qty" class="qty-input" autocomplete="off">
+                                                </div>
+
+                                                <div class="desc-wrapper">
+                                                    <input type="text" class="desc-input" name="description" autocomplete="off">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="qty-input-wrapper">
+                                                    <input type="text" name="qty" class="qty-input" autocomplete="off">
+                                                </div>
+
+                                                <div class="desc-wrapper">
+                                                    <input type="text" class="desc-input" name="description" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                <div class="upload-wrapper active">
+                                    <div class="select-input-wrapper">
+                                        <label for="select-file">Select Files</label>
+                                        <input type="file" name="select-file" id="select-file" class="select-file-input" multiple accept="application/pdf,application/vnd.ms-excel">
+                                        <p class="text">File Supported: PDF,XSLS,Image</p>
+                                    </div>
+                                    <div class="selected-file">
+                                    </div>
+                                </div>
+                                <div class="mail-wrapper">
+                                    <div class="mail-header-container">
+                                        <p class="test">Quote test #6295478644</p>
+                                        <p class="from-text">Info@astral.com</p>
+                                        <div class="to-text">
+                                            <span class="mail">To: sales@revalgo.com</span>
+                                            <span class="date">wed 29/4/2026 3.11 PM</span>
+                                        </div>
+                                    </div>
+                                    <div class="mail-body-container">
+                                        <div class="img-wrapper">
+                                            <div class="img-container">
+                                                <div class="img-detail">
+                                                    <img src="./assets/images/dashboard/jpg_icon.png" alt="jpg">
+                                                    <span class="img-text">img23.jpg</span>
+                                                </div>
+                                                <a class="download-btn" href="./assets/images/orderpad/email_pad_atchement_img_file.png" download="Email Pad Attachment"><img src="./assets/images/dashboard/download_icon.png" alt="download"></a>
+                                                
+                                            </div>
+                                            <div class="img-container">
+                                                <div class="img-detail">
+                                                    <img src="./assets/images/dashboard/jpg_icon.png" alt="jpg">
+                                                    <span class="img-text">img23.jpg</span>
+                                                </div>
+                                                <a class="download-btn" href="./assets/images/orderpad/email_pad_atchement_img_file.png" download="Email Pad Attachment"><img src="./assets/images/dashboard/download_icon.png" alt="download"></a>
+                                            </div>
+                                             <div class="img-container hidden">
+                                                <div class="img-detail">
+                                                    <img src="./assets/images/dashboard/jpg_icon.png" alt="jpg">
+                                                    <span class="img-text">img23.jpg</span>
+                                                </div>
+                                                <a class="download-btn" href="./assets/images/orderpad/email_pad_atchement_img_file.png" download="Email Pad Attachment"><img src="./assets/images/dashboard/download_icon.png" alt="download"></a>
+                                            </div>
+                                             <div class="img-container hidden">
+                                                <div class="img-detail">
+                                                    <img src="./assets/images/dashboard/jpg_icon.png" alt="jpg">
+                                                    <span class="img-text">img23.jpg</span>
+                                                </div>
+                                                <a class="download-btn" href="./assets/images/orderpad/email_pad_atchement_img_file.png" download="Email Pad Attachment"><img src="./assets/images/dashboard/download_icon.png" alt="download"></a>
+                                            </div>
+                                        </div>
+                                        <div class="img-info-container">
+                                            <div class="img-header">
+                                                <p class="file-name">Img23</p>
+                                                <div class="btn-container">
+                                                    <button type="button" class="info-btn"><img src="./assets/images/orderpad/info_icon.png" alt="info"> <span></span></button>
+                                                    <button type="button" class="rotate-btn"><img src="./assets/images/orderpad/rotate_icon.png" alt="rotate"></button>
+                                                    <button type="button" class="img-close-btn"><img src="./assets/images/orderpad/image_close icon.png" alt="image close"></button>
+                                                </div>
+                                            </div>
+                                            <div class="sample-img-wrapper">
+                                                <img src="./assets/images/orderpad/email_pad_atchement_img_file.png" alt="attachment image">
+                                            </div>
+                                        </div>
+                                        <div class="text-container">
+                                            <p class="title">Hi</p>
+                                            <div class="list-wrapper">
+                                                <p class="list-title">Please find the order below:</p>
+                                                <ul class="list">
+                                                    <li>
+                                                        <span class="acronym-item" data-id="1">Inch </span> 
+                                                        <span class="acronym-item" data-id="2">pvc </span>
+                                                        <span class="acronym-item" data-id="3">conduit </span>
+                                                    </li>
+                                                    <li>
+                                                      <span class="acronym-item"  data-id="4">Inch </span>
+                                                       <span class="acronym-item" data-id="5"> Plastic </span>
+                                                        <span class="acronym-item" data-id="6">Plain </span>
+                                                        <span class="acronym-item" data-id="7">conduit </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="acronym-item" data-id="8">2-1/2  </span>
+                                                        <span class="acronym-item" data-id="9">aluminium</span>
+                                                        <span class="acronym-item" data-id="10">conduit</span>
+                                                    </li>
+                                                    <li> 
+                                                        <span class="acronym-item" data-id="11">2-1/2  </span>
+                                                        <span class="acronym-item" data-id="12">aluminium </span>
+                                                        <span class="acronym-item" data-id="13">conduit </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="bottom-container">
+                                                <p>King Regards,</p>
+                                                <P>Kevin</P>
+                                            </div>
+                                        </div>
+                                    </div>
+                                      
+                                </div>
+                                <div class="upload-btn-container active">
+                                    <button type="button" class="upload-btn not-active">Upload</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="right-wrapper">
+                            <div class="display-table">
+                                <div class="table-row header-wrapper">
+                                    <div></div>
+                                    <div><input type="checkbox" autocomplete="off" class="check-all-input" onclick="selectAllRow(event)"></div>
+                                    <div>Line No</div>
+                                    <div>Qty Requested</div>
+                                    <div>Requested / <span>Suggested Product</span></div>
+                                    <div>Score</div>
+                                    <div>Available Qty</div>
+                                    <div>Unit Cost</div>
+                                    <div>Margin</div>
+                                    <div>Selling Price</div>
+                                    <div>Total Cost</div>
+                                    <div>
+                                        <button type="button" class="delete-all-btn active" onclick="deleteAllRow()"><img src="./assets/images/global/delete_icon.png" alt="delete"></button>
+                                        <button type="button" class="undo-all-btn" onclick="undoAllRow()"><img src="./assets/images/dashboard/undo_icon.png" alt="undo"></button>
+                                    </div>
+                                </div>
+                                    <div class="body-wrapper">
+                                        <div class="table-row">
+                                            <p><img src="./assets/images/global/drag_menu.png" alt="drag menu" class="drag-handle"  draggable="true" ></p>
+                                            <p><input type="checkbox"></p>
+                                            <p>1</p>
+                                            <p><input type="text" value="80" name="qty-requested"></p>
+                                            <p>
+                                                <span class="title-text">Lorem ipsum dolor sit.</span>
+                                                <span class="dropdown-text">
+                                                    <img src="./assets/images/global/down_arrow.png" alt="down-arrow" class="down-arrow-img"> <span class="id">ID45327</span> - 
+                                                    <span class="detail">tydlx4ypi6</span> - 
+                                                    <span class="sourcing"><img src="./assets/images/orderpad/sourcing_icon.png" alt="sourcing">Sourcing</span>
+                                                    <span class="stock-wrapper"><span class="supplier-text text-uppercase">eaton</span> - <span class="stock-text">NS   <span class="tooltiptext">Non Stock</span></span> - </span>
+                                                    <span class="tag-text"><img src="./assets/images/global/tag.png" alt="tag">Kanebridge</span>
+                                                </span>
+                                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam doloribus hic facere, veniam in distinctio id tempora voluptatum? Facilis eius aut numquam. Alias perferendis sunt veniam reprehenderit officiis quas delectus.</span>  
+                                            </p>
+                                            <p>33</p>
+                                            <p>200</p>
+                                            <p><span>$<input type="text" value="30" name="cost"></span></p>
+                                            <p><span><input type="text" value="10" name="margin">%</span></p>
+                                            <p>$20</p>
+                                            <p>$2,000.00</p>
+                                            <p>
+                                                <button type="button" class="delete-line-btn active"><img src="./assets/images/global/delete_icon.png" alt="delete"></button>
+                                                <button type="button" class="undo-line-btn"> <img src="./assets/images/dashboard/undo_icon.png" alt="undo"></button>
+                                            </p>
+                                            <button class="add-line-note-btn"><img src="./assets/images/create_quote/add_note_grey_bg.png" class="img-grey active" alt="add note grey"> <img src="./assets/images/create_quote/add_note icon_blue.png" class="img-blue " alt="add note blue "></button>
+                                        </div>
+                                        <div class="sourcing-dropdown">
+                                            <div class="desc-wrapper">
+                                                <div class="img-wrapper">
+                                                    <label for="thumbnail-img"><img src="./assets/images/orderpad/default_thumbnail_image.png" class="thumbnail-img" alt="default"></label>
+                                                    <input type="file" id="thumbnail-img" class="thumbnail-img-input" hidden accept="image/*">
+                                                </div>
+
+                                                <div class="desc-container">
+                                                    <h3>Description</h3>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="spec-wrapper">
+                                                <h3>Specifications</h3>
+                                                <div class="content-container">
+                                                    <div class="left-content">
+                                                        <p><span class="label">Wire Size</span> <span class="value">12 AWG</span></p>
+                                                        <p><span class="label">Material</span> <span class="value">Ploepropylene</span></p>
+                                                        <p><span class="label">Specifications</span> <span class="value">#10 Fork Material </span></p>
+                                                        <p><span class="label">Dimensions</span> <span class="value">1-1/2 In L</span></p>
+                                                    </div>
+                                                    <div class="right-content">
+                                                        <p><span class="label">Housing Material</span> <span class="value">Steel</span></p>
+                                                        <p><span class="label">Number of outlets</span> <span class="value">1</span></p>
+                                                        <p><span class="label">Brand</span> <span class="value">Kanebridge</span></p>
+                                                        <p><span class="label">Type</span> <span class="value">Standard</span></p>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="table-row">
+                                            <p><img src="./assets/images/global/drag_menu.png" alt="drag menu" class="drag-handle"  draggable="true" ></p>
+                                            <p><input type="checkbox"></p>
+                                            <p>1</p>
+                                            <p><input type="text" value="80" name="qty-requested"></p>
+                                            <p>
+                                                <span class="title-text">Lorem ipsum dolor sit.</span>
+                                                <span class="dropdown-text">
+                                                    <img src="./assets/images/global/down_arrow.png" alt="down-arrow" class="down-arrow-img"> <span class="id">ID45327</span> - 
+                                                    <span class="detail">tydlx4ypi6</span> - 
+                                                    <span class="sourcing"><img src="./assets/images/orderpad/sourcing_icon.png" alt="sourcing">Sourcing</span>
+                                                    <span class="stock-wrapper"><span class="supplier-text text-uppercase">eaton</span> - <span class="stock-text">NS   <span class="tooltiptext">Non Stock</span></span> - </span>
+                                                    <span class="tag-text"><img src="./assets/images/global/tag.png" alt="tag">Kanebridge</span>
+                                                </span>
+                                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam doloribus hic facere, veniam in distinctio id tempora voluptatum? Facilis eius aut numquam. Alias perferendis sunt veniam reprehenderit officiis quas delectus.</span>  
+                                            </p>
+                                            <p>33</p>
+                                            <p>200</p>
+                                            <p><span>$<input type="text" value="30" name="cost"></span></p>
+                                            <p><span><input type="text" value="10" name="margin">%</span></p>
+                                            <p>$20</p>
+                                            <p>$2,000.00</p>
+                                            <p>
+                                                <button type="button" class="delete-line-btn active"><img src="./assets/images/global/delete_icon.png" alt="delete"></button>
+                                                <button type="button" class="undo-line-btn"> <img src="./assets/images/dashboard/undo_icon.png" alt="undo"></button>
+                                            </p>
+                                            <button class="add-line-note-btn"><img src="./assets/images/create_quote/add_note_grey_bg.png" class="img-grey active" alt="add note grey"> <img src="./assets/images/create_quote/add_note icon_blue.png" class="img-blue " alt="add note blue "></button>
+                                        </div>
+
+                                        <div class="table-row">
+                                            <p><img src="./assets/images/global/drag_menu.png" alt="drag menu" class="drag-handle"  draggable="true" ></p>
+                                            <p><input type="checkbox"></p>
+                                            <p>1</p>
+                                            <p><input type="text" value="80" name="qty-requested"></p>
+                                            <p>
+                                                <span class="title-text">Lorem ipsum dolor sit.</span>
+                                                <span class="dropdown-text">
+                                                    <img src="./assets/images/global/down_arrow.png" alt="down-arrow" class="down-arrow-img"> <span class="id">ID45327</span> - 
+                                                    <span class="detail">tydlx4ypi6</span> - 
+                                                    <span class="sourcing"><img src="./assets/images/orderpad/sourcing_icon.png" alt="sourcing">Sourcing</span>
+                                                    <span class="stock-wrapper"><span class="supplier-text text-uppercase">eaton</span> - <span class="stock-text">NS   <span class="tooltiptext">Non Stock</span></span> - </span>
+                                                    <span class="tag-text"><img src="./assets/images/global/tag.png" alt="tag">Kanebridge</span>
+                                                </span>
+                                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam doloribus hic facere, veniam in distinctio id tempora voluptatum? Facilis eius aut numquam. Alias perferendis sunt veniam reprehenderit officiis quas delectus.</span>  
+                                            </p>
+                                            <p>33</p>
+                                            <p>200</p>
+                                            <p><span>$<input type="text" value="30" name="cost"></span></p>
+                                            <p><span><input type="text" value="10" name="margin">%</span></p>
+                                            <p>$20</p>
+                                            <p>$2,000.00</p>
+                                            <p>
+                                                <button type="button" class="delete-line-btn active"><img src="./assets/images/global/delete_icon.png" alt="delete"></button>
+                                                <button type="button" class="undo-line-btn"> <img src="./assets/images/dashboard/undo_icon.png" alt="undo"></button>
+                                            </p>
+                                            <button class="add-line-note-btn"><img src="./assets/images/create_quote/add_note_grey_bg.png" class="img-grey active" alt="add note grey"> <img src="./assets/images/create_quote/add_note icon_blue.png" class="img-blue " alt="add note blue "></button>
+                                        </div>
+                                        
+                                        <div class="add-btn-container left">
+                                            <button type="button"><img src="./assets/images/create_quote/add_item_icon.png" alt="add"></button>
+                                            <p class="text">Click here to Add Item</p>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </main>
+        <button type="button" class="minimize-btn"><img src="./assets/images/create_quote/prev_arrow_blue.png" alt="prev arrow"></button>
+        <div class="suggest-product-popup">
+                <div class="product-header">
+                    <input type="text" class="search-suggest-product" name="search-suggest-product" placeholder="Search" autocomplete="off">
+                    <button class="expand-btn" data-target=".suggest-product-popup" data-type="table" data-modal="suggest-popup" ><img src="./assets/images/orderpad/expand_icon.png"  alt="expand icon"></button>
+                    <button class="min-suggest-btn" onclick="retrieveSuggestPopup()"><img src="./assets/images/orderpad/collapse_icon.png" class="collapse-img" alt="collapse"></button>
+                    <button class="close-suggest-popup-btn" onclick="closeSuggestPopup()"><img src="./assets/images/global/close_modal.webp" alt="close"></button>
+                </div>
+                    <div class="product-body">
+                        <h3 class="title">Suggested Product</h3>
+                            <div class="products">
+                                <div class="product">
+                                    <div class="detail-container">
+                                                            
+                                        <p class="product-id"> <span class="label id">ID14321</span> <span class="value"> - $33.03</span></p>
+                                        <p class="avil-qty"> <span class="label">Avaliable Qty</span> <span class="value"> 372</span></p>
+                                        <p class="score"> <span class="label">Score</span> <span class="value"> 90%</span></p>
+                                    </div>
+                                    <p class="desc">o-z/ gedney clip on 670 170 conduit body cover, 2 in hub, for use with for conduit body cover.</p>
+                                </div>
+                                <div class="product">
+                                    <div class="detail-container">
+                                                            
+                                        <p class="product-id"> <span class="label id">ID14321</span> <span class="value"> - $33.03</span></p>
+                                        <p class="avil-qty"> <span class="label">Avaliable Qty</span> <span class="value"> 372</span></p>
+                                        <p class="score"> <span class="label">Score</span> <span class="value"> 90%</span></p>
+                                    </div>
+                                    <p class="desc">o-z/ gedney clip on 670 170 conduit body cover, 2 in hub, for use with for conduit body cover.</p>
+                                </div>
+                                                    <div class="product">
+                                                        <div class="detail-container">
+                                                            <p class="product-id"> <span class="label id">ID14321</span> <span class="value"> - $33.03</span></p>
+                                                            <p class="avil-qty"> <span class="label">Avaliable Qty</span> <span class="value"> 372</span></p>
+                                                            <p class="score"> <span class="label">Score</span> <span class="value"> 90%</span></p>
+                                                        </div>
+                                                        <p class="desc">o-z/ gedney clip on 670 170 conduit body cover, 2 in hub, for use with for conduit body cover.</p>
+                                                    </div>
+                                                    <div class="product">
+                                                        <div class="detail-container">
+                                                            
+                                                            <p class="product-id"> <span class="label id">ID14321</span> <span class="value"> - $33.03</span></p>
+                                                            <p class="avil-qty"> <span class="label">Avaliable Qty</span> <span class="value"> 372</span></p>
+                                                            <p class="score"> <span class="label">Score</span> <span class="value"> 90%</span></p>
+                                                        </div>
+                                                        <p class="desc">o-z/ gedney clip on 670 170 conduit body cover, 2 in hub, for use with for conduit body cover.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+        </div>
+        <div class="supplier-popup">
+            <div class="supplier-header">
+                <h3 class="title">Supplier Details</h3>   
+                <button class="close-supplier-popup-btn"><img src="./assets/images/global/close_modal.webp" alt="close"></button>
+            </div>
+                <div class="supplier-body">
+                    <div class="products">
+                        <div class="product">                       
+                            <p class="supplier text-uppercase">EATON</p>
+                            <div class="detail-container">
+                                <p class="qty"> <span class="label">ID14321</span> <span class="value">50</span></p>
+                                <p class="unit-cost"> <span class="label">Unit Cost</span> <span class="value"> 50</span></p>
+                                <p class="location"> <span class="label">Location</span> <span class="value">Albama</span></p>
+                                <p class="lead-time"> <span class="label">Lead Time</span> <span class="value">2 days</span></p>
+                                <p class="updated-date"> <span class="label">Last Updated Date </span> <span class="value">11-09-2022</span></p>
+                            </div>                          
+                        </div>
+                                                        
+                        <div class="product">
+
+                            <p class="supplier">Direct Trading Co.</p>
+                            <div class="detail-container">
+                                <p class="qty"> <span class="label">ID14321</span> <span class="value">50</span></p>
+                                <p class="unit-cost"> <span class="label">Unit Cost</span> <span class="value"> 50</span></p>
+                                <p class="location"> <span class="label">Location</span> <span class="value">Albama</span></p>
+                                <p class="lead-time"> <span class="label">Lead Time</span> <span class="value">2 days</span></p>
+                                <p class="updated-date"> <span class="label">Last Updated Date </span> <span class="value">11-09-2022</span></p>
+                            </div>
+                                                            
+                        </div>
+                                                        <div class="product">
+
+                                                            <p class="supplier">Fund Masters</p>
+                                                            <div class="detail-container">
+                                                                <p class="qty"> <span class="label">ID14321</span> <span class="value">50</span></p>
+                                                                <p class="unit-cost"> <span class="label">Unit Cost</span> <span class="value"> 50</span></p>
+                                                                <p class="location"> <span class="label">Location</span> <span class="value">Albama</span></p>
+                                                                <p class="lead-time"> <span class="label">Lead Time</span> <span class="value">2 days</span></p>
+                                                                 <p class="updated-date"> <span class="label">Last Updated Date </span> <span class="value">11-09-2022</span></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product">
+                                                            <p class="supplier">Leo and Co</p>
+                                                            <div class="detail-container">
+                                                                <p class="qty"> <span class="label">ID14321</span> <span class="value">50</span></p>
+                                                                <p class="unit-cost"> <span class="label">Unit Cost</span> <span class="value"> 50</span></p>
+                                                                <p class="location"> <span class="label">Location</span> <span class="value">Albama</span></p>
+                                                                <p class="lead-time"> <span class="label">Lead Time</span> <span class="value">2 days</span></p>
+                                                                 <p class="updated-date"> <span class="label">Last Updated Date </span> <span class="value">11-09-2022</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+        </div>
+        <div class="sourcing-popup">
+            <div class="sourcing-header">
+                <input type="text" class="search-sourcing-product" name="search-sourcing-product" placeholder="Search" autocomplete="off">
+                <button class="close-source-popup-btn"><img src="./assets/images/global/close_modal.webp" alt="close"></button>
+            </div>
+            <div class="sourcing-body">
+                <h3 class="title">Suggested Product</h3>                  
+                    <div class="products">
+                                                        
+                        <div class="product">
+                            <div class="detail-container">                                                                
+                                <p class="score"> <span class="label">Score</span> <span class="value"> 90%</span></p>
+                            </div>
+                            <p class="desc">o-z/ gedney clip on 670 170 conduit body cover, 2 in hub, for use with for conduit body cover.</p>
+                        </div>
+                        <div class="product">
+                            <div class="detail-container">
+                              <p class="product-id"> <span class="label id">ID14321</span> <span class="value">S</span></p>
+                                <p class="score"> <span class="label">Score</span> <span class="value"> 90%</span></p>
+                            </div>
+                           <p class="desc">o-z/ gedney clip on 670 170 conduit body cover, 2 in hub, for use with for conduit body cover.</p>
+                    </div>
+                                                        <div class="product">
+                                                            <div class="detail-container">
+                                                                
+                                                                <p class="product-id"> <span class="label id">ID14321</span> <span class="value">NS</span></p>
+                                                                <p class="score"> <span class="label">Score</span> <span class="value"> 90%</span></p>
+                                                            </div>
+                                                            <p class="desc">o-z/ gedney clip on 670 170 conduit body cover, 2 in hub, for use with for conduit body cover.</p>
+                                                        </div>
+                                                        <div class="product">
+                                                            <div class="detail-container">
+                                                                
+                                                                <p class="product-id"> <span class="label id">ID14321</span> <span class="value">S</span></p>
+                                                                <p class="score"> <span class="label">Score</span> <span class="value"> 90%</span></p>
+                                                            </div>
+                                                            <p class="desc">o-z/ gedney clip on 670 170 conduit body cover, 2 in hub, for use with for conduit body cover.</p>
+                                                        </div>
+                                                    </div>
+                                            </div>
+        </div>
+        <span class="acronym-dropdown" >
+            <ul>
+                <li>Add Item</li>
+                <li onclick="openAcronymPopup(this)" >Add Acronym</li>
+            </ul>
+        </span>
+        <div class="popup-overlay">
+            <div class="expand-modal popup">
+                <button class="close-modal-btn close-popup-btn"><img src="./assets/images/global/close_modal.webp" alt="close"></button>
+                <div class="expand-modal-content">
+                </div>
+            </div>
+            <div class="add-note-popup add-quote-note-popup popup ">
+                <div class="header">
+                    <h3 class="title">Add Note</h3>
+                    <button type="button" class="close-popup-btn"><img src="./assets/images/global/close_modal.webp" alt="close"></button>
+                </div>
+                <textarea name="add-quote-note" placeholder="Notes..." class="add-quote-note-input"></textarea>
+                <div class="btn-container">
+                    <button type="button" class="add-btn" onclick=" closeModal()">Add</button>
+                    <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+                </div>
+            </div>
+            <div class="approve-quote-popup popup ">
+                <div class="header">
+                    <h3 class="title">Approve Quote</h3>
+                    <button type="button" class="close-popup-btn"><img src="./assets/images/global/close_modal.webp" alt="close"></button>
+                </div>
+                <div class="approve-content">
+                    <p class="quote-id">#rev1086</p>
+                    <table class="approve-table">
+                        <thead>
+                            <tr>
+                                <th>Total Lines</th>
+                                <th>Add Items</th>
+                                <th>Total Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>10</td>
+                                <td>$608.8</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="header">
+                    <h3 class="title">Add Header Note</h3>
+                </div>
+                <textarea name="add-quote-note" placeholder="Add Notes here"></textarea>
+                <div class="btn-container">
+                    <button type="button" class="approve-btn">Approve</button>
+                     <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+            <div class="add-note-popup add-line-note-popup popup">
+                <div class="header">
+                    <h3 class="title">Add Quote Note</h3>
+                    <button type="button" class="close-popup-btn"><img src="./assets/images/global/close_modal.webp" alt="close"></button>
+                </div>
+                <textarea name="add-quote-note" class="add-line-note-input"></textarea>
+                <div class="btn-container">
+                    <button type="button" class="add-btn">Add</button>
+                    <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+                </div>
+            </div>
+            <div class="del-popup-1 popup">
+                <p class="del-title">Delete</p>
+                <p class="text">Do you want to Delete item 2?</p>
+                <div class="btn-container">
+                    <button type="button" class="yes-btn">Yes</button>
+                    <button type="button" class="no-btn" onclick="closeModal()">No</button>
+                </div>
+            </div>
+            <div class="del-popup-2 popup">
+                <p class="del-title">Delete</p>
+                <p class="text">Are you sure you want to delete <br> this order <span class="id"> #7DBE8BFED ?</span> </p>
+                <textarea name="delete-quote" class="del-quote-text"></textarea>
+                <div class="btn-container">
+                    <button type="button" class="yes-btn ">Yes</button>
+                    <button type="button" class="no-btn" onclick="closeModal()">No</button>
+                </div>
+            </div>
+            <div class="success-popup popup">
+                <p class="text">Your Quote <span class="id">#7DB38FED</span> has been Approved Successfully</p>
+                <button type="button" class="ok-btn">Ok</button>
+            </div>
+            <div class="add-popup popup">
+                <div class="item-header">
+                    <h3>Add Item</h3>
+
+                    <button type="button" class="close-popup-btn"><img src="./assets/images/global/close_modal.webp" alt="close"></button>
+                </div>
+                <div class="add-table">
+                    <div class="table-row header-wrapper">
+                        <div>Qty Requested</div>
+                        <div>Product ID</div>
+                        <div>Score</div>
+                        <div>Available Qty</div>
+                        <div>MPN</div>
+                        <div>Cost</div>
+                        <div>Margin</div>
+                        <div>Selling Price</div>
+                        <div>Total Cost</div>
+                        <div></div>
+                        <div></div>
+                    </div>
+
+                    <div class="body-wrapper">
+                        <div class="table-row">
+                            <p><input type="text" value="40" name="qty-requested" autocomplete="off"></p>
+                            <p><img src="./assets/images/global/down_arrow.png" alt="down-arrow" class="down-arrow-img"> <span class="id">ID45327</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam doloribus hic facere, veniam in distinctio id tempora voluptatum? Facilis eius aut numquam. Alias perferendis sunt veniam reprehenderit officiis quas delectus.</p>
+                            <p>90%</p>
+                            <p>200</p>
+                            <p>AD12465</p>
+                            <p class="cost">$100</p>
+                            <p><span><input type="text" value="10" name="margin" autocomplete="off">%</span></p>
+                            <p class="selling-price">$110</p>
+                            <p class="total-cost">$4,400.00</p>
+                            
+                            <button type="button"><img src="./assets/images/create_quote/edit_grey.png" alt="edit"></button>
+                            <button type="button" class="add-line-btn" onclick="addLine(event)"><img src="./assets/images/create_quote/line_add_icon.png" alt="add"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button type="button" class="add-btn add-lines-btn">Add</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+            <div class="img-popup popup">
+                <div class="header">
+                    <div class="text-container">
+                        <h3 class="title">Additonal Information <span>(6/12)</span></h3>
+                        <p>File Name: <span> Img23.jpg</span></p>
+                    </div>
+                    <button type="button" class="close-popup-btn"><img src="./assets/images/global/close_modal.webp" alt="close"></button>
+                </div>
+                <div class="content-container">
+                    <div class="select-all-wrapper">
+                        <input type="checkbox" name="select-all" id="select-all" class="select-all-input">
+                        <label for="select-all" class="select-all">Select All</label>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <div class="input-container">
+                            <input type="checkbox" name="select" id="select" class="select-input" checked>
+                            <div class="text-wrapper">
+                                <p class="label">Alternate</p>
+                                <input type="text" name="alternate" class="alternate" id="alternate">
+                    
+                            </div>
+                        </div>
+                         <div class="input-container">
+                            <input type="checkbox" name="select" class="select-input" checked>
+                            <div class="text-wrapper">
+                                <p class="label">Bill To Job</p>
+                                <textarea type="text" name="bill_to_job" id="bill_to_job" class="bill_to_job "></textarea>
+
+                            </div>
+                        </div>
+                         <div class="input-container">
+                            <input type="checkbox" name="select" class="select-input" checked>
+                            <div class="text-wrapper">
+                                <p class="label">Booked Dock Time Delivery Needed</p>
+                                <input type="text" name="dock_time" id="dock_time" class="dock_time"  placeholder="7 - 7.30 AM Delivery Window"></input>
+                            
+                            </div>
+                        </div>
+                         <div class="input-container">
+                            <input type="checkbox" name="select" class="select-input">
+                            <div class="text-wrapper">
+                                <p class="label">Contact Info</p>
+                                <input type="text" name="contact" id="contact" class="contact"  placeholder="Bob Driscoll (718) 825-619"></input>
+                        
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <input type="checkbox" name="select" class="select-input" checked>
+                            <div class="text-wrapper">
+                                <p class="label">Delivery Date</p>
+                                <input name="deleivery-date" id="deleivery-date" class="deleivery-date" placeholder="dd/mm/yyyy"></input>
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <input type="checkbox" name="select" class="select-input" checked>
+                            <div class="text-wrapper">
+                                <p class="label">Delivery Time</p>
+                                <input type="text" name="deleivery-time" id="deleivery-time" class="deleivery-time">
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <input type="checkbox" name="select" class="select-input">
+                            <div class="text-wrapper">
+                                <p class="label">Ship Via</p>
+                                <textarea name="ship-via" id="ship" class="ship_to"></textarea>
+                                <!-- <p class="value text-uppercase">-</p> -->
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <input type="checkbox" name="select" class="select-input">
+                            <div class="text-wrapper">
+                                <p class="label">Order Date</p>
+                                <!-- <p class="value text-uppercase">3/30/2027</p> -->
+                                <input name="order-date" id="order-date" class="order-date" placeholder="dd/mm/yyyy"></input>
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <input type="checkbox" name="select" class="select-input" checked>
+                            <div class="text-wrapper">
+                                <p class="label">Order Number</p>
+                     
+                                <input type="text" name="order_no" id="Order_no" class="Order_no">
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <input type="checkbox" name="select" class="select-input">
+                            <div class="text-wrapper">
+                                <p class="label">Deliver To</p>
+                                <input type="text" name="deliever_to" id="deliever_to" class="deliever_to">
+                                <!-- <p class="value">2702 - Brighstar, 650 5th Ave, FI 29 Brighstar Capital 650 5th Ave., 29th FI, NewYork NY 10019</p> -->
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <input type="checkbox" name="select" class="select-input">
+                            <div class="text-wrapper">
+                                <p class="label">Buyer</p>
+                                <input type="text" name="buyer" id="buyer" class="buyer">
+
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <input type="checkbox" name="select" class="select-input">
+                            <div class="text-wrapper">
+                                <p class="label">Work For</p>
+                                <input type="text" name="work" id="work" class="work">
+                                <!-- <p class="value">Structure Tone, Inc. 2707 Brighstar, 650 5th Ave, Fi 29 Brighstar Capital NewYork NY 10019</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button type="button" class="update-btn not-active">Update</button>
+                    <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+                </div>
+            </div>
+            <div class="stock-popup popup">
+                <p class="text">Do you want to confirm with this <br> <span class="id">ID14321</span> Non stock item? </p>
+                <div class="btn-container">
+                    <button type="button" class="yes-btn">Yes</button>
+                    <button type="button" class="no-btn">No</button>
+                </div>
+            </div>
+            <div class="add-acronym-popup popup">
+                <div class="header">
+                    <h3 class="title">Add Acronym</h3>
+                    <button type="button" class="close-popup-btn"><img src="./assets/images/global/close_modal.webp" alt="close"></button>
+                </div>
+                <div class="body">
+
+                    <!-- <div class="edit-acronym"> -->
+                    <p type="text" class="acronym-text"></p>
+                    <!-- </div> -->
+                    <input type="text" class="add-acronym-input" name="add-acronym"   placeholder="Add Acronym Text" autocomplete="off">
+                    <div class="acronym-chip-container">
+                    </div>
+
+                </div>
+                <div class="btn-container">
+                    <button type="button" class="add-btn">Add</button>
+                    <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+                </div>
+            </div>
+            <div class="form-popup popup">
+                <div class="header">
+                    <h3 class="title form-title">Ship To</h3>
+                    <button type="button" class="close-popup-btn"><img src="./assets/images/global/close_modal.webp" alt="close"></button>
+                </div>
+                <form class="update-form">
+
+                
+                <div class="form-wrapper">
+                    <div class="form-container bill_to" data-con="bill_to">
+                        <div class="input-group">
+                            <label for="bill_name">Name</label>
+                            <input type="text" name="name" id="bill_name" placeholder="Name"autocomplete="on">
+                        </div>
+                        <p class="error">No error</p>
+                    </div>
+                    <div class="form-container bill_to" data-con="bill_to">
+                        <div class="input-group">
+                             <label for="bill_address">Address</label>
+                            <textarea name="address" id="bill_address" placeholder="Address" autocomplete="on"></textarea>
+                        </div>
+                        <p class="error">No error</p>
+                    </div>
+                    <div class="form-container ship_to" data-con="ship_to">
+                        <div class="input-group">
+                            <label for="ship_name">Name</label>
+                            <input type="text" name="name" id="ship_name" placeholder="Name"autocomplete="on">
+                        </div>
+                        <p class="error">No error</p>
+                    </div>
+                    <div class="form-container ship_to" data-con="ship_to">
+                        <div class="input-group">
+                             <label for="ship_address">Address</label>
+                            <textarea name="address" id="ship_address" placeholder="Address" autocomplete="on"></textarea>
+                        </div>
+                        <p class="error">No error</p>
+                    </div>
+                     <div class="form-container po_no" data-con="po_no">
+                        <div class="input-group">
+                            <label for="po-no">PO No</label>
+                            <input type="text" name="po-no" id="po-no" placeholder="PO No"></input>
+                        </div>
+                        <p class="error">No error</p>
+                    </div>
+                    
+                    <div class="form-container job_no" data-con="job_no" >
+                        <div class="input-group">
+                            <label for="job-no">Job No</label>
+                            <input type="text" name="job-no" id="job-no" placeholder="Job No"></input>
+                        </div>
+                        <p class="error">No error</p>
+                    </div>
+                    <div class="form-container buyer" data-con="buyer">
+                        <div class="input-group">
+                            <label for="buyer">Buyer</label>
+                            <input type="text" name="buyer" id="buyer" placeholder="Buyer"></input>
+                        </div>
+                        <p class="error">No error</p>
+                    </div>
+                    <div class="form-container deleivery_date" data-con="deleivery_date">
+                        <div class="input-group">
+                            <p class="label">Deleivery Date</p>
+                            <div class="date-text">dd-mm-yyyy</div>
+                            <div class="datepicker">
+                                <div class="datepicker-top">
+                            
+                            <div class="month-selector">
+                                <button type="button" class="arrow prev-month">
+                                    <img src="./assets/images/global/left_arrow.png" alt="left" />
+                                </button>
+                                <div class="year-wrapper">
+                                    <span class="month-name"></span>
+                                    <span class="year"></span>
+                                </div>
+                                <button type="button" class="arrow next-month">
+                                <img src="./assets/images/global/right_arrow.png" alt="right"/>
+                                </button>
+                            </div>
+                            </div>
+                            <div class="datepicker-calendar">
+                                <div class="days"></div>
+                                <div class="dates"></div>
+                            </div>
+                            </div>
+                            <input type="hidden" name="deleivery-date" id="deleivery-date" class="date-input" placeholder="Deleivery Date" />
+                        </div>
+                        <p class="error">No error</p>
+                    </div>
+
+                </div>
+                </form>
+                <div class="btn-container">
+                    <button type="button" class="update-btn">Update</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div class="loader-wrapper">
+            <div class="loader"></div>
+        </div>
+        <script src="./assets/js/header.js"></script>
+        <script src="./assets/js/recentQuote.js"></script>
+        <script src="./assets/js/table.js"></script>
+        <script src="./assets/js/popup.js"></script>
+        <script src="./assets/vendor/js_zip/jsZip.min.js"></script>
+        <script src="./assets/js/checkValid.js"></script>
+    </body>
+</html>
+        

@@ -1,0 +1,23 @@
+@use "../abstracts/colors" as *;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif ;
+    display: flex;
+    flex-direction: column;
+}
+
+body.not-active{
+    overflow-y: hidden;
+}
+
+a{
+    text-decoration: none ;
+}

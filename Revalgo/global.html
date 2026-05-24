@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global | Revalgo</title>
+    <link rel="stylesheet"href="./assets/vendor/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="./dashboard.html" class="logo"
+        ><img
+          src="./assets/images/login/revalgo_white_background.png"
+          alt="Revalgo White"
+      /></a>
+      <div class="search-wrapper">
+        <input
+          type="text"
+          id="search-quote"
+          class="search-quote-input"
+          name="search-quote"
+          placeholder="PO#, Order#, Customer# / Name"
+          autocomplete="off"
+        />
+        <button class="search-quote-btn">
+          <img
+            src="./assets/images/dashboard/search_icon.png"
+            alt="Search icon"
+          />
+        </button>
+        <div class="global-dropdown">
+          <ul class="list-wrapper">
+            <div class="id-wrapper list-container">
+              <h3 class="list-header">Quote Id</h3>
+              <ul class="id-list">
+                <li>McKesson Corporation</li>
+                <li>McKesson Corporation Limited</li>
+                <li>McKesn</li>
+                <li>McKenson</li>
+                <li>McKenson</li>
+              </ul>
+            </div>
+            <div class="name-wrapper list-container">
+              <h3 class="list-header">Customer Name</h3>
+              <ul class="name-list">
+                <li>McKesson Corporation</li>
+                <li>McKesson Corporation Limited</li>
+                <li>McKesn</li>
+                <li>McKenson</li>
+                <li>McKenson</li>
+              </ul>
+            </div>
+            <div class="po-wrapper list-container">
+              <h3 class="list-header">PO</h3>
+              <ul class="po-list">
+                <li>McKesson Corporation</li>
+                <li>McKesson Corporation Limited</li>
+                <li>McKesn</li>
+                <li>McKenson</li>
+                <li>McKenson</li>
+              </ul>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="./create-quote.html" class="new-quote-btn">New Quote</a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./assets/images/global/home.png" alt="home"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./assets/images/global/bell.png" alt="bell"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./assets/images/global/settings.png" alt="settings"
+            /></a>
+          </li>
+          <li class="profile-container">
+            <div class="profile-img-wrapper">
+              <img
+                src="./assets/images/global/user.png"
+                class="user-profile"
+                alt="profile"
+              />
+            </div>
+
+            <button type="button" class="profile-toggle">
+              <img
+                src="./assets/images/global/down_arrow.png"
+                class="down-arrow"
+                alt="down-arrow"
+              />
+            </button>
+            <div class="profile-menu">
+              <a href="./index.html" class="logout-btn">
+                <img
+                  src="./assets/images/global/logout.png"
+                  alt="logout"
+                />Logout</a
+              >
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="global-wrapper">
+      <div class="quote-filter-wrapper">
+        <div class="filter-outer-wrapper">
+          <div class="header-wrapper">
+            <div class="header-container">
+              <h2>
+                Search Results For
+                <span class="search-text">"Mckesson Corporation"</span>
+              </h2>
+              <button class="refresh-btn">
+                <img
+                  src="./assets/images/dashboard/undo_icon.png"
+                  alt="undo"
+                />Refresh
+              </button>
+            </div>
+
+            <p class="total-item">20 items</p>
+          </div>
+
+          <div class="filter-inner-wrapper">
+            <div class="filter-wrapper">
+              <h3 class="filter-header">
+                Filters
+                <button class="accordion-button down-arrow-btn"  data-bs-target="#filter-inner-container" data-bs-toggle="collapse" >
+                  <img
+                  class="down-arrow " 
+                  src="./assets/images/dashboard/down_arrow_blue.png"
+                  alt="down arrow"
+                />
+                </button>
+                
+              </h3>
+              <div class="filter-inner-container collapse show" id="filter-inner-container">
+              <div class="filter-container">
+                <div class="filter-subheader">
+                  <h3
+                    class="accordion-button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#statusBody"
+                  >
+                    <span class="plus"> + </span>
+                    <span class="minus"> - </span> Status
+                  </h3>
+                  <div class="control-btn-container">
+                    <button type="button" class="select-all-btn select-btn">
+                      Select All
+                    </button>
+                    <button type="button" class="clear-all-chips-btn">
+                      Clear All
+                    </button>
+                  </div>
+                </div>
+                <div class="filter-chip-wrapper collapse show" id="statusBody">
+                  <div class="filter-chip-container">
+                    <button type="button" class="filter-chip filter-chip-btn">
+                      Approved
+                    </button>
+                    <button type="button" class="filter-chip filter-chip-btn">
+                      pending
+                    </button>
+                    <button type="button" class="filter-chip filter-chip-btn">
+                      Deleted
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="filter-container customer-fil">
+                <h3
+                  class="accordion-button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#searchBody"
+                >
+                  <span class="plus"> + </span>
+                  <span class="minus"> - </span> Customer Name
+                </h3>
+                <div id="searchBody" class="customer-filter-wrapper">
+                  <div class="search-container">
+                    <input
+                      type="text"
+                      id="search-customer"
+                      class="search-customer-input"
+                      name="search-customer"
+                      placeholder="Search by Customer"
+                    />
+                    <button for="search-customer" class="search-customer-btn">
+                      <img
+                        src="./assets/images/dashboard/search_icon.png"
+                        alt="Search icon"
+                      />
+                    </button>
+                  </div>
+                  <div
+                    class="customer-filter-container checkbox-filter-container"
+                  >
+                    <div class="customer-filter checkbox-filter">
+                      <input
+                        type="checkbox"
+                        name="customer-name"
+                        id="acmec-electric"
+                      />
+                      <label for="acmec-electric" class="filter-label"
+                        >Acmec Electric</label
+                      >
+                    </div>
+                    <div class="customer-filter checkbox-filter">
+                      <input
+                        type="checkbox"
+                        name="customer-name"
+                        id="unknown"
+                      />
+                      <label for="unknown" class="filter-label">Unknown</label>
+                    </div>
+                    <div class="customer-filter checkbox-filter">
+                      <input type="checkbox" name="customer-name" id="acmec" />
+                      <label for="acmec" class="filter-label">Acmec</label>
+                    </div>
+                    <div class="customer-filter checkbox-filter">
+                      <input
+                        type="checkbox"
+                        name="customer-name"
+                        id="acmec-electric"
+                      />
+                      <label for="acmec-electric" class="filter-label"
+                        >ACME Electric</label
+                      >
+                    </div>
+                  </div>
+                  <a href="#" class="see-more-link">See More</a>
+                </div>
+              </div>
+              <div class="filter-container">
+                <h3
+                  class="accordion-button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#dateBody"
+                >
+                  <span class="plus"> + </span>
+                  <span class="minus"> - </span> Date Range
+                </h3>
+                <div class="date-outer-wrapper collapse show" id="dateBody">
+                  <h4>Received Date</h4>
+                  <div class="date-wrapper">
+                    <div class="start-container date-container" data-filter="received">
+                      <p class="start-label date-label">Start Date</p>
+                      <div class="date-text start-text received-start-text">
+                        mm/dd/yyyy
+                        <img
+                          src="./assets/images/create_quote/date_range_calendar_icon.png"
+                          alt="date"
+                        />
+                      </div>
+                    </div>
+                    <div class="end-container date-container" data-filter="received">
+                      <p class="end-label date-label">End Date</p>
+                      <div class="date-text end-text received-end-text">
+                        mm/dd/yyyy
+                        <img
+                          src="./assets/images/create_quote/date_range_calendar_icon.png"
+                          alt="date"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <h4>Approved Date</h4>
+                  <div class="date-wrapper">
+                    <div class="start-container date-container" data-filter="approved">
+                      <p class="start-label date-label">Start Date</p>
+                      <div class="date-text start-text approved-start-text">
+                        mm/dd/yyyy
+                        <img
+                          src="./assets/images/create_quote/date_range_calendar_icon.png"
+                          alt="date"
+                        />
+                      </div>
+                    </div>
+                    <div class="end-container date-container" data-filter="approved">
+                      <p class="end-label date-label">End Date</p>
+                      <div class="date-text end-text approved-end-text">
+                        mm/dd/yyyy
+                        <img
+                          src="./assets/images/create_quote/date_range_calendar_icon.png"
+                          alt="date"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="filter-container">
+                <h3
+                  class="accordion-button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#modeBody"
+                >
+                  <span class="plus"> + </span>
+                  <span class="minus"> - </span> Mode Of Quotes
+                </h3>
+                <div class="mode-filter-wrapper collapse show" id="modeBody">
+                  <div class="mode-filter-container checkbox-filter-container">
+                    <div class="mode-filter checkbox-filter">
+                      <input type="checkbox" name="mode" id="erp" />
+                      <label for="erp" class="filter-label text-uppercase"
+                        >erp</label
+                      >
+                    </div>
+                    <div class="mode-filter checkbox-filter">
+                      <input type="checkbox" name="mode" id="call" />
+                      <label for="call" class="filter-label text-capitalize"
+                        >call</label
+                      >
+                    </div>
+                    <div class="mode-filter checkbox-filter">
+                      <input type="checkbox" name="mode" id="email" />
+                      <label for="email" class="filter-label text-capitalize"
+                        >emaidffffl</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+            <div class="datepicker start-datepicker">
+              <div class="datepicker-top">
+                <div class="month-selector">
+                  <button type="button" class="arrow prev-month">
+                    <img
+                      src="./assets/images/global/left_arrow.png"
+                      alt="left"
+                    />
+                  </button>
+                  <div class="year-wrapper">
+                    <span class="month-name"></span>
+                    <span class="year"></span>
+                  </div>
+                  <button type="button" class="arrow next-month">
+                    <img
+                      src="./assets/images/global/right_arrow.png"
+                      alt="right"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div class="datepicker-calendar">
+                <div class="days"></div>
+                <div class="dates"></div>
+              </div>
+            </div>
+            <div class="datepicker end-datepicker">
+              <div class="datepicker-top">
+                <div class="month-selector">
+                  <button type="button" class="arrow prev-month">
+                    <img
+                      src="./assets/images/global/left_arrow.png"
+                      alt="left"
+                    />
+                  </button>
+                  <div class="year-wrapper">
+                    <span class="month-name"></span>
+                    <span class="year"></span>
+                  </div>
+                  <button type="button" class="arrow next-month">
+                    <img
+                      src="./assets/images/global/right_arrow.png"
+                      alt="right"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div class="datepicker-calendar">
+                <div class="days"></div>
+                <div class="dates"></div>
+              </div>
+            </div>
+            <div class="filter-table-wrapper">
+              <div class="search-container">
+                <input
+                  type="text"
+                  id="search-table"
+                  class="search-table-quote-input"
+                  name="search-table"
+                  placeholder="Search"
+                />
+                <button for="search-table" class="search-table-quote-btn">
+                  <img
+                    src="./assets/images/dashboard/search_icon.png"
+                    alt="Search icon"
+                  />
+                </button>
+              </div>
+              <div class="status-container">
+                <div class="status-chip-container">
+                  <span class="chip"
+                    >Approved<span class="close-chip"
+                      ><img
+                        src="./assets/images/global/close_modal.webp"
+                        alt="close" /></span
+                  ></span>
+                  <span class="chip"
+                    >Pending
+                    <span class="close-chip"
+                      ><img
+                        src="./assets/images/global/close_modal.webp"
+                        alt="close" /></span
+                  ></span>
+                  <span class="chip"
+                    >Deleted
+                    <span class="close-chip"
+                      ><img
+                        src="./assets/images/global/close_modal.webp"
+                        alt="close" /></span
+                  ></span>
+                </div>
+                <button class="clear-all-stats-btn clear-all-btn">
+                  Clear All
+                </button>
+              </div>
+              <table class="filter-table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>
+                      <span data-sort="id"
+                        >Quote Id
+                        <img
+                          src="./assets/images/dashboard/sort_icon.png"
+                          alt="Sort_icon"
+                      /></span>
+                    </th>
+                    <th>
+                      <span data-sort="name"
+                        >Customer Name / Number
+                        <img
+                          src="./assets/images/dashboard/sort_icon.png"
+                          alt="Sort_icon"
+                      /></span>
+                    </th>
+                    <th>
+                      <span data-sort="received_date"
+                        >Received Date
+                        <img
+                          src="./assets/images/dashboard/sort_icon.png"
+                          alt="Sort_icon"
+                      /></span>
+                    </th>
+                    <th>
+                      <span data-sort="approved_date"
+                        >Approved Date
+                        <img
+                          src="./assets/images/dashboard/sort_icon.png"
+                          alt="Sort_icon"
+                      /></span>
+                    </th>
+                    <th>
+                      <span data-sort="status"
+                        >Status
+                        <img
+                          src="./assets/images/dashboard/sort_icon.png"
+                          alt="Sort_icon"
+                      /></span>
+                    </th>
+                    <th>
+                      <span data-sort="total_line_no"
+                        >Total Line No
+                        <img
+                          src="./assets/images/dashboard/sort_icon.png"
+                          alt="Sort_icon"
+                      /></span>
+                    </th>
+                    <th>
+                      <span data-sort="total_price"
+                        >Total price
+                        <img
+                          src="./assets/images/dashboard/sort_icon.png"
+                          alt="Sort_icon"
+                      /></span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <img
+                        src="./assets/images/dashboard/call_icon.png"
+                        alt="call"
+                      />
+                    </td>
+                    <td><a href="#" class="quote-id-data">#7655656</a></td>
+                    <td>McKesson Corporation / 8948475656548</td>
+                    <td>06-10-2022</td>
+                    <td>06-11-2022</td>
+                    <td><span>Approved</span></td>
+                    <td><span>9</span></td>
+                    <td>$18,54.1.11</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img
+                        src="./assets/images/dashboard/call_icon.png"
+                        alt="call"
+                      />
+                    </td>
+                    <td><a href="#" class="quote-id-data">#7655656</a></td>
+                    <td>McKesson Corporation / 8948475656548</td>
+                    <td>06-10-2022</td>
+                    <td>06-11-2022</td>
+                    <td><span>Approved</span></td>
+                    <td><span>9</span></td>
+                    <td>$18,54.1.11</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img
+                        src="./assets/images/dashboard/call_icon.png"
+                        alt="call"
+                      />
+                    </td>
+                    <td><a href="#" class="quote-id-data">#7655656</a></td>
+                    <td>McKesson Corporation / 8948475656548</td>
+                    <td>06-10-2022</td>
+                    <td>06-11-2022</td>
+                    <td><span>Approved</span></td>
+                    <td><span>9</span></td>
+                    <td>$18,54.1.11</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img
+                        src="./assets/images/dashboard/call_icon.png"
+                        alt="call"
+                      />
+                    </td>
+                    <td><a href="#" class="quote-id-data">#7655656</a></td>
+                    <td>McKesson Corporation / 8948475656548</td>
+                    <td>06-10-2022</td>
+                    <td>06-11-2022</td>
+                    <td><span>Approved</span></td>
+                    <td><span>9</span></td>
+                    <td>$18,54.1.11</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img
+                        src="./assets/images/dashboard/call_icon.png"
+                        alt="call"
+                      />
+                    </td>
+                    <td><a href="#" class="quote-id-data">#7655656</a></td>
+                    <td>McKesson Corporation / 8948475656548</td>
+                    <td>06-10-2022</td>
+                    <td>06-11-2022</td>
+                    <td><span>Approved</span></td>
+                    <td><span>9</span></td>
+                    <td>$18,54.1.11</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img
+                        src="./assets/images/dashboard/call_icon.png"
+                        alt="call"
+                      />
+                    </td>
+                    <td><a href="#" class="quote-id-data">#7655656</a></td>
+                    <td>McKesson Corporation / 8948475656548</td>
+                    <td>06-10-2022</td>
+                    <td>06-11-2022</td>
+                    <td><span>Approved</span></td>
+                    <td><span>9</span></td>
+                    <td>$18,54.1.11</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="pagination-wrapper">
+                <div class="show-wrapper">
+                  <div class="show-container">
+                    <div class="show-group">
+                      Show
+                      <div class="select-wrapper">
+                        <select id="rows" class="rows-select" name="rows">
+                          <option value="5">5</option>
+                          <option value="10">10</option>
+                          <option value="15" selected>15</option>
+                          <option value="20">20</option>
+                          <option value="25">25</option>
+                        </select>
+
+                        <img
+                          src="./assets/images/global/left_arrow.png"
+                          alt="left"
+                        />
+                      </div>
+                    </div>
+                    <span class="show-text">Showing 1 to 11 of 20 entries</span>
+                  </div>
+                </div>
+                <div class="pagination">
+                  <button class="prev">&lt;</button>
+                  <button class="page">1</button>
+                  <button class="page">2</button>
+                  <button class="page active">7</button>
+                  <span>...</span>
+                  <button class="page">8</button>
+                  <button class="prev">&gt;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/header.js"></script>
+    <script src="./assets/js/global.js"></script>
+    <script src="./assets/js/checkValid.js"></script>
+  </body>
+</html>

@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Revalgo</title>
+    <link rel="stylesheet"href="./assets/vendor/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="./dashboard.html" class="logo"
+        ><img
+          src="./assets/images/login/revalgo_white_background.png"
+          alt="Revalgo White"
+      /></a>
+      <div class="search-wrapper">
+        <input
+          type="text"
+          id="search-quote"
+          class="search-quote-input"
+          name="search-quote"
+          placeholder="PO#, Order#, Customer# / Name"
+          autocomplete="off"
+        />
+        <button class="search-quote-btn">
+          <img
+            src="./assets/images/dashboard/search_icon.png"
+            alt="Search icon"
+          />
+        </button>
+        <div class="global-dropdown">
+          <ul class="list-wrapper">
+            <div class="id-wrapper list-container">
+              <h3 class="list-header">Quote Id</h3>
+              <ul class="id-list">
+                <li>McKesson Corporation</li>
+                <li>McKesson Corporation Limited</li>
+                <li>McKesn</li>
+                <li>McKenson</li>
+                <li>McKenson</li>
+              </ul>
+            </div>
+            <div class="name-wrapper list-container">
+              <h3 class="list-header">Customer Name</h3>
+              <ul class="name-list">
+                <li>McKesson Corporation</li>
+                <li>McKesson Corporation Limited</li>
+                <li>McKesn</li>
+                <li>McKenson</li>
+                <li>McKenson</li>
+              </ul>
+            </div>
+            <div class="po-wrapper list-container">
+              <h3 class="list-header">PO</h3>
+              <ul class="po-list">
+                <li>McKesson Corporation</li>
+                <li>McKesson Corporation Limited</li>
+                <li>McKesn</li>
+                <li>McKenson</li>
+                <li>McKenson</li>
+              </ul>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="./create-quote.html" class="new-quote-btn">New Quote</a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./assets/images/global/home.png" alt="home"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./assets/images/global/bell.png" alt="bell"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./assets/images/global/settings.png" alt="settings"
+            /></a>
+          </li>
+          <li class="profile-container">
+            <div class="profile-img-wrapper">
+              <img
+                src="./assets/images/global/user.png"
+                class="user-profile"
+                alt="profile"
+              />
+            </div>
+
+            <button type="button" class="profile-toggle">
+              <img
+                src="./assets/images/global/down_arrow.png"
+                class="down-arrow"
+                alt="down-arrow"
+              />
+            </button>
+            <div class="profile-menu">
+              <a href="./index.html" class="logout-btn">
+                <img
+                  src="./assets/images/global/logout.png"
+                  alt="logout"
+                />Logout</a
+              >
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="dashboard-wrapper">
+      <div class="dashboard-header-wrapper">
+        <div class="header-container">
+          <h2 class="text-uppercase">Dashboard</h2>
+          <div class="dropdown-wrapper">
+            <div class="date-filter">
+              <div class="date-dropdown">
+                <div class="date-text">
+                  Last 6 Months
+                  <img
+                    src="./assets/images/dashboard/down_arrow_blue.png"
+                    alt="down_arrow_blue"
+                  />
+                </div>
+                <div class="custom-text">
+                  <div class="start-text">14/04/2026</div>
+                  -
+                  <div class="end-text">16/04/2026</div>
+                </div>
+                <ul class="dropdown-menu">
+                  <li data-value="today">Today</li>
+                  <li data-value="yesterday">Yesterday</li>
+                  <li data-value="lastWeek">Last Week</li>
+                  <li data-value="lastMonth">Last 30 Days</li>
+                  <li data-value="last6Months">Last 6 Months</li>
+                  <li data-value="custom">Custom</li>
+                </ul>
+              </div>
+
+              <!-- Calendar -->
+              <div class="date-picker">
+                <div class="input-wrapper">
+                  <span class="start-date start active">14/04/2026</span>-
+                  <span class="end-date end">16/04/2026</span>
+                </div>
+
+                <div class="calendar" id="calendar">
+                  <div class="top-wrapper">
+                    <div class="month-selector">
+                      <button type="button" class="arrow prev-month">
+                        <img
+                          src="./assets/images/global/left_arrow.png"
+                          alt="left arrow"
+                        />
+                      </button>
+                      <div class="year-wrapper">
+                        <span class="month-name"></span>
+                        <span class="year">2025</span>
+                      </div>
+                      <button type="button" class="arrow next-month">
+                        <img
+                          src="./assets/images/global/right_arrow.png"
+                          alt="right arrow"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <div class="days"></div>
+                    <div class="dates">
+                      <button class="date faded" type="button">30</button>
+                      <button class="date faded" type="button">31</button>
+                      <button class="date" type="button">1</button>
+                      <button class="date" type="button">2</button>
+                      <button class="date" type="button">3</button>
+                      <button class="date" type="button">4</button>
+                      <button class="date" type="button">5</button>
+                      <button class="date" type="button">6</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="widget-btn">
+              <div class="widget-text">+ Add/ Remove Widget</div>
+
+              <ul class="widget-dropdown-menu">
+                <p>Select Widget</p>
+                <li>
+                  <input type="checkbox" id="select-all" checked /><label
+                    for="select-all"
+                    >Select All</label
+                  >
+                </li>
+                <li>
+                  <input type="checkbox" id="recent" checked />
+                  <label for="recent">Recent Orders</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="trend" checked />
+                  <label for="trend">Trend</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="accuracy" checked />
+                  <label for="accuracy">Accuracy</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="transaction" checked />
+                  <label for="transaction">Top Transactions</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="stats-wrapper">
+          <div class="stat-container">
+            <div class="img-wrapper">
+              <img src="./assets/images/dashboard/cart.png" alt="cart" />
+            </div>
+            <div class="stat-content">
+              <p class="stat-title">Total Quotes</p>
+              <p class="stat-text total-count">525</p>
+            </div>
+          </div>
+          <div class="stat-container">
+            <div class="img-wrapper">
+              <img src="./assets/images/dashboard/quality.png" alt="quality" />
+            </div>
+            <div class="stat-content">
+              <p class="stat-title">Approved Quotes</p>
+              <p class="stat-text apprv-count">525</p>
+            </div>
+          </div>
+          <div class="stat-container">
+            <div class="img-wrapper">
+              <img src="./assets/images/dashboard/pending.png" alt="pending" />
+            </div>
+            <div class="stat-content">
+              <p class="stat-title">Pending Quotes</p>
+              <p class="stat-text pend-count">45</p>
+            </div>
+          </div>
+          <div class="stat-container">
+            <div class="img-wrapper">
+              <img src="./assets/images/dashboard/coin.png" alt="coin" />
+            </div>
+            <div class="stat-content">
+              <p class="stat-title">Total Revenue</p>
+              <p class="stat-text total-revenue">525</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dashboard-body-wrapper">
+        <div class="quotes-container">
+          <h3>Recent Quotes</h3>
+          <div class="table-wrapper">
+            <div class="top-container">
+              <div class="btn-container">
+                <button type="button" class="pend-btn" data-filter="pending">
+                  Pending <span class="pend-count">22</span>
+                </button>
+                <button
+                  type="button"
+                  class="apprv-btn "
+                  data-filter="approved"
+                >
+                  Approved <span class="apprv-count">22</span>
+                </button>
+                <button type="button" data-filter="deleted">
+                  Deleted <span class="del-count">22</span>
+                </button>
+                <button type="button" class="active" data-filter="all">
+                  All <span class="all-count">22</span>
+                </button>
+              </div>
+              <div class="filter-wrapper">
+                <div class="search-container">
+                  <input
+                    type="text"
+                    class="search-table-quote-input"
+                    name="search-table-quote"
+                    placeholder="Search"
+                  />
+                  <button type="button" class="search-table-quote-btn">
+                    <img
+                      src="./assets/images/dashboard/search_icon.png"
+                      alt="Search icon"
+                    />
+                  </button>
+                </div>
+                <div class="filter-container">
+                  <button type="button" class="filter-text">
+                    <img
+                      src="./assets/images/dashboard/filter_icon.png"
+                      alt="filter icon"
+                    />Filter
+                  </button>
+                  <div class="filter-dropdown">
+                    <ul>
+                      <li data-sort="name" class="active" data-ascending="true">Name (A-Z)</li>
+                      <li data-sort="name" data-ascending="false">
+                        Name (Z-A)
+                      </li>
+                      <li data-sort="id">ID</li>
+                    </ul>
+                  </div>
+                </div>
+                <button type="button" class="export-btn">
+                  <img
+                    src="./assets/images/dashboard/export_icon.png"
+                    alt="Export icon"
+                  />
+                </button>
+                <button
+                  type="button"
+                  class="expand-btn"
+                  data-type="table"
+                  data-target=".quotes-container"
+                  data-modal="quotes"
+                >
+                  <img
+                    src="./assets/images/dashboard/expand_icon.png"
+                    alt="Expand icon"
+                  />
+                </button>
+              </div>
+            </div>
+            <table class="quote-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>
+                    <span data-sort="id"
+                      >Quote Id
+                      <img
+                        src="./assets/images/dashboard/sort_icon.png"
+                        alt="Sort_icon"
+                    /></span>
+                  </th>
+                  <th>
+                    <span data-sort="name"
+                      >Customer Name / Number
+                      <img
+                        src="./assets/images/dashboard/sort_icon.png"
+                        alt="Sort_icon"
+                    /></span>
+                  </th>
+                  <th>
+                    <span data-sort="received_date"
+                      >Received Date
+                      <img
+                        src="./assets/images/dashboard/sort_icon.png"
+                        alt="Sort_icon"
+                    /></span>
+                  </th>
+                  <th>
+                    <span data-sort="approved_date"
+                      >Approved Date
+                      <img
+                        src="./assets/images/dashboard/sort_icon.png"
+                        alt="Sort_icon"
+                    /></span>
+                  </th>
+                  <th>
+                    <span data-sort="status"
+                      >Status
+                      <img
+                        src="./assets/images/dashboard/sort_icon.png"
+                        alt="Sort_icon"
+                    /></span>
+                  </th>
+                  <th>
+                    <span data-sort="total_line_no"
+                      >Total Line No
+                      <img
+                        src="./assets/images/dashboard/sort_icon.png"
+                        alt="Sort_icon"
+                    /></span>
+                  </th>
+                  <th>
+                    <span data-sort="total_price"
+                      >Total price
+                      <img
+                        src="./assets/images/dashboard/sort_icon.png"
+                        alt="Sort_icon"
+                    /></span>
+                  </th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/call_icon.png"
+                      alt="call"
+                    />
+                  </td>
+                  <td>
+                    <a href="./recent-quote.html" class="quote-id-data"
+                      >#7655656</a
+                    >
+                  </td>
+                  <td>McKesson Corporation / 8948475656548</td>
+                  <td>06-10-2022</td>
+                  <td>06-11-2022</td>
+                  <td>Approved</td>
+                  <td>9</td>
+                  <td>$18,54.1.11</td>
+                  <!-- <td><img src="./assets/images/dashboard/add_icon.png" alt="add"></td> -->
+                  <td>Undo</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/call_icon.png"
+                      alt="call"
+                    />
+                  </td>
+                  <td>
+                    <a href="./recent-quote.html" class="quote-id-data"
+                      >#7655656</a
+                    >
+                  </td>
+                  <td>McKesson Corporation / 8948475656548</td>
+                  <td>06-10-2022</td>
+                  <td>06-11-2022</td>
+                  <td>Approved</td>
+                  <td>9</td>
+                  <td>$18,54.1.11</td>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/add_icon.png"
+                      alt="add"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/call_icon.png"
+                      alt="call"
+                    />
+                  </td>
+                  <td>
+                    <a href="./recent-quote.html" class="quote-id-data"
+                      >#7655656</a
+                    >
+                  </td>
+                  <td>McKesson Corporation / 8948475656548</td>
+                  <td>06-10-2022</td>
+                  <td>06-11-2022</td>
+                  <td>Approved</td>
+                  <td>9</td>
+                  <td>$18,54.1.11</td>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/add_icon.png"
+                      alt="add"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/call_icon.png"
+                      alt="call"
+                    />
+                  </td>
+                  <td>
+                    <a href="./recent-quote.html" class="quote-id-data"
+                      >#7655656</a
+                    >
+                  </td>
+                  <td>McKesson Corporation / 8948475656548</td>
+                  <td>06-10-2022</td>
+                  <td>06-11-2022</td>
+                  <td>Approved</td>
+                  <td>9</td>
+                  <td>$18,54.1.11</td>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/add_icon.png"
+                      alt="add"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/call_icon.png"
+                      alt="call"
+                    />
+                  </td>
+                  <td>
+                    <a href="./recent-quote.html" class="quote-id-data"
+                      >#7655656</a
+                    >
+                  </td>
+                  <td>McKesson Corporation / 8948475656548</td>
+                  <td>06-10-2022</td>
+                  <td>06-11-2022</td>
+                  <td>Approved</td>
+                  <td>9</td>
+                  <td>$18,54.1.11</td>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/add_icon.png"
+                      alt="add"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/call_icon.png"
+                      alt="call"
+                    />
+                  </td>
+                  <td>
+                    <a href="./recent-quote.html" class="quote-id-data"
+                      >#7655656</a
+                    >
+                  </td>
+                  <td>McKesson Corporation / 8948475656548</td>
+                  <td>06-10-2022</td>
+                  <td>06-11-2022</td>
+                  <td>Approved</td>
+                  <td>9</td>
+                  <td>$18,54.1.11</td>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/add_icon.png"
+                      alt="add"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/call_icon.png"
+                      alt="call"
+                    />
+                  </td>
+                  <td>
+                    <a href="./recent-quote.html" class="quote-id-data"
+                      >#7655656</a
+                    >
+                  </td>
+                  <td>McKesson Corporation / 8948475656548</td>
+                  <td>06-10-2022</td>
+                  <td>06-11-2022</td>
+                  <td>Approved</td>
+                  <td>9</td>
+                  <td>$18,54.1.11</td>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/add_icon.png"
+                      alt="add"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/call_icon.png"
+                      alt="call"
+                    />
+                  </td>
+                  <td>
+                    <a href="./recent-quote.html" class="quote-id-data"
+                      >#7655656</a
+                    >
+                  </td>
+                  <td>McKesson Corporation / 8948475656548</td>
+                  <td>06-10-2022</td>
+                  <td>06-11-2022</td>
+                  <td>Approved</td>
+                  <td>9</td>
+                  <td>$18,54.1.11</td>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/add_icon.png"
+                      alt="add"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/call_icon.png"
+                      alt="call"
+                    />
+                  </td>
+                  <td>
+                    <a href="./recent-quote.html" class="quote-id-data"
+                      >#7655656</a
+                    >
+                  </td>
+                  <td>McKesson Corporation / 8948475656548</td>
+                  <td>06-10-2022</td>
+                  <td>06-11-2022</td>
+                  <td>Approved</td>
+                  <td>9</td>
+                  <td>$18,54.1.11</td>
+                  <td>
+                    <img
+                      src="./assets/images/dashboard/add_icon.png"
+                      alt="add"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="chart-wrapper">
+          <div class="chart-container">
+            <div class="trend-chart-wrapper">
+              <h4>Trends</h4>
+              <div class="trend-chart-container">
+                <div class="chart-header">
+                  <div class="export-btn-container">
+                    <button
+                      type="button"
+                      class="expand-btn"
+                      data-type="chart"
+                      data-target=".trend-chart-wrapper"
+                      data-modal="trend"
+                    >
+                      <img
+                        src="./assets/images/dashboard/expand_icon.png"
+                        alt="expand icon"
+                      />
+                    </button>
+                  </div>
+
+                  <div class="header-content">
+                    <div class="header-text">
+                      <p class="count quote-count total-count">525</p>
+                      <p class="text">Quotes</p>
+                    </div>
+                    <div class="legend-container">
+                      <p class="legend total-legend"><span></span>Total</p>
+                      <p class="legend approved-legend">
+                        <span></span>Approved
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="trend-chart" id="trend-chart"></div>
+              </div>
+            </div>
+            <div class="accuracy-chart-wrapper">
+              <h4>Accuracy</h4>
+              <div class="accuracy-chart-container">
+                <div class="chart-header">
+                  <div class="export-btn-container">
+                    <button
+                      type="button"
+                      class="expand-btn"
+                      data-type="chart"
+                      data-target=".accuracy-chart-wrapper"
+                      data-modal="accuracy"
+                    >
+                      <img
+                        src="./assets/images/dashboard/expand_icon.png"
+                        alt="expand icon"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="accuracy-chart" id="accuracy-chart"></div>
+              </div>
+            </div>
+          </div>
+          <div class="transaction-wrapper">
+            <div class="btn-container">
+              <button type="button" class="dropdown-btn transaction-button accordion-button" data-bs-toggle="collapse" data-bs-target="#transaction-table-content" >
+                <img
+                  src="./assets/images/dashboard/down_arrow_blue.png"
+                  alt="down-arrow"
+                />
+                Top Transactions
+              </button>
+              <button
+                class="view-more-btn expand-btn"
+                class="expand-btn"
+                data-type="table"
+                data-target=".transaction-wrapper"
+                data-modal="transaction"
+              >
+                View More
+              </button>
+            </div>
+            <div class="transaction-table-content collapse show" id="transaction-table-content">
+            <table class="transaction-table" >
+              <thead>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Amount</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>View Communications</td>
+                  <td>JP Morgan Chase</td>
+                  <td>$500</td>
+                </tr>
+                <tr>
+                  <td>View Communications</td>
+                  <td>JP Morgan Chase</td>
+                  <td>$500</td>
+                </tr>
+                <tr>
+                  <td>View Communications</td>
+                  <td>JP Morgan Chase</td>
+                  <td>$500</td>
+                </tr>
+                <tr>
+                  <td>View Communications</td>
+                  <td>JP Morgan Chase</td>
+                  <td>$500</td>
+                </tr>
+                <tr>
+                  <td>View Communications</td>
+                  <td>JP Morgan Chase</td>
+                  <td>$500</td>
+                </tr>
+                <tr>
+                  <td>View Communications</td>
+                  <td>JP Morgan Chase</td>
+                  <td>$500</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-container">&copy; 2026 All Cpoyrights Reserved</div>
+    </main>
+    <div class="expand-overlay">
+      <div class="expand-modal ">
+        <button class="close-modal-btn">
+          <img src="./assets/images/global/close_modal.webp" alt="close" />
+        </button>
+        <div class="expand-modal-content">
+          <div class="trend-chart-wrapper trend-modal-chart-wrapper">
+            <h4>Trends</h4>
+            <div class="trend-chart-container">
+              <div class="chart-header">
+                <div class="export-btn-container">
+                  <button
+                    type="button"
+                    class="expand-btn"
+                    data-type="chart"
+                    data-target=".trend-chart-wrapper"
+                  >
+                    <img
+                      src="./assets/images/dashboard/expand_icon.png"
+                      alt="expand icon"
+                    />
+                  </button>
+                </div>
+
+                <div class="header-content">
+                  <div class="header-text">
+                    <p class="count total-count">525</p>
+                    <p class="text">Quotes</p>
+                  </div>
+                  <div class="legend-container">
+                    <p class="legend total-legend"><span></span>Total</p>
+                    <p class="legend approved-legend"><span></span>Approved</p>
+                  </div>
+                </div>
+              </div>
+              <div class="trend-chart" id="trend-modal-chart"></div>
+            </div>
+          </div>
+          <div class="accuracy-chart-wrapper active">
+            <h4>Accuracy</h4>
+            <div class="accuracy-chart-container">
+              <div class="chart-header">
+                <div class="export-btn-container">
+                  <button
+                    type="button"
+                    class="expand-btn"
+                    data-type="chart"
+                    data-target=".accuracy-chart-wrapper"
+                  >
+                    <img
+                      src="./assets/images/dashboard/expand_icon.png"
+                      alt="expand icon"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div class="accuracy-chart" id="accuracy-modal-chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="undo-modal">
+        <p class="text">
+          Are you sure you want to undo this <br />
+          Quote ID #7DBE8BFED
+        </p>
+        <div class="btn-container">
+          <button type="button" class="yes-btn">Yes</button>
+          <button type="button" class="no-btn">No</button>
+        </div>
+      </div>
+    </div>
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+    </div>
+    <script src="./assets/vendor/highcharts/highcharts.js"></script>
+    <script src="./assets/vendor/highcharts/highcharts-more.js"></script>
+    <script src="./assets/vendor/highcharts/solid-gauge.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/header.js"></script>
+    <script src="./assets/js/dashboard.js"></script>
+    <script src="./assets/js/checkValid.js"></script>
+  </body>
+</html>
